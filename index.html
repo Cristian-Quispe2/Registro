@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <h2>REGISTRARSE</h2> <br>
+        <label for="nombres">Nombres:</label>
+        <input type="text" id="nom" placeholder="Juan Perez"> <br>
+        <label for="">Apellidos:</label>
+        <input type="text" id="apellido" placeholder="Mamani Mamani"> <br>
+        <label for="nacimiento">Fecha de cumpleaños:</label>
+        <input type="date" id="cumple"> <br>
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" required>
+            
+        <button onclick="registro()">REGISTRARSE</button>
+    </form>
+    <script>
+        let contra = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+        const contraseña = document.getElementById("password");
+        contraseña.addEventListener("input", function() {
+            let validacion = document.getElementById("password").value;
+            let esValida = contra.test(validacion);
+            console.log(esValida);
+            if (esValida) {
+                console.log("La contraseña es válida.");
+            } else {
+                console.log("La contraseña no es válida.");
+            }
+        });
+    </script>
+</body>
+
+</html>
