@@ -33,13 +33,16 @@
             const nombre = document.getElementById('nombre').value;
             const apellido = document.getElementById('apellido').value;
             const contraseña = document.getElementById('contraseña').value;
+
             const regexContraseña = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
             if (!regexContraseña.test(contraseña)) {
                 alert('La contraseña debe tener al menos 8 caracteres, incluyendo 1 mayúscula, 1 minúscula, 1 dígito y 1 carácter especial.');
                 return;
             }
             const correo = `${apellido.charAt(0)}${nombre.charAt(1)}${nombre.charAt(2)}${nombre.slice(1)}${apellido.slice(-2)}@gmail.com`;
-            alert(`Correo generado: ${correo}`);
+            document.writeln(`USUARIO REGISTRADO<br>`);
+            document.writeln(`Felicidades su nuevo correo es: <br>`);
+            document.writeln(`${correo}`);
         });
     </script>
 </body>
