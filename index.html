@@ -33,8 +33,6 @@
             const nombre = document.getElementById('nombre').value;
             const apellido = document.getElementById('apellido').value;
             const contraseña = document.getElementById('contraseña').value;
-
-            // Validar contraseña
             const regexContraseña = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
             if (!regexContraseña.test(contraseña)) {
                 alert('La contraseña debe tener al menos 8 caracteres, incluyendo 1 mayúscula, 1 minúscula, 1 dígito y 1 carácter especial.');
