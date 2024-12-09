@@ -161,9 +161,10 @@
 
         document.getElementById('enviarRestablecer').addEventListener('click', function () {
             const correoRestablecer = document.getElementById('correoRestablecer').value;
-            usuarioRegistrado = JSON.parse(localStorage.getItem('usuarioRegistrado'));
-
-            if (usuarioRegistrado && correoRestablecer === usuarioRegistrado.correo) {
+            //usuarioRegistrado = JSON.parse(localStorage.getItem('usuariosRegistrados'));
+            //const usuarioRegistrado = usuariosRegistrados.find(usuario => usuario.correo === correo);
+            const usuarioEncontrado = usuariosRegistrados.find(usuario => usuario.correo === correoRestablecer);
+            if (usuarioEncontrado) {
                 alert('Correo verificado. Ahora puedes cambiar tu contraseña.');
                 toggleCambioContraseña();
             } else {
